@@ -1,0 +1,225 @@
+% LaTeX Curriculum Vitae Template
+%
+% Copyright (C) 2004-2009 Jason Blevins <jrblevin@sdf.lonestar.org>
+% http://jblevins.org/projects/cv-template/
+%
+% You may use use this document as a template to create your own CV
+% and you may redistribute the source code freely. No attribution is
+% required in any resulting documents. I do ask that you please leave
+% this notice and the above URL in the source code if you choose to
+% redistribute this file.
+
+\documentclass[letterpaper]{article}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{bibentry}
+\usepackage{natbib}
+
+% Comment the following lines to use the default Computer Modern font
+% instead of the Palatino font provided by the mathpazo package.
+% Remove the 'osf' bit if you don't like the old style figures.
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+
+% Set your name here
+\def\name{Chenzhi Zhu}
+
+% Replace this with a link to your CV if you like, or set it empty
+% (as in \def\footerlink{}) to remove the link in the footer:
+
+% The following metadata will show up in the PDF properties
+\hypersetup{
+  colorlinks = true,
+  urlcolor = black,
+  pdfauthor = {\name},
+  pdfkeywords = {Curriculum Vitae},
+  pdftitle = {\name: Curriculum Vitae},
+  pdfsubject = {Curriculum Vitae},
+  pdfpagemode = UseNone
+}
+
+\geometry{
+  body={6.4in, 8.5in},
+  left=1.0in,
+  top=1.25in
+}
+
+% Customize page headers
+\pagestyle{myheadings}
+\markright{\name}
+\thispagestyle{empty}
+
+% Custom section fonts
+\usepackage{sectsty}
+\sectionfont{\rmfamily\mdseries\Large}
+\subsectionfont{\rmfamily\mdseries\itshape\large}
+
+% Other possible font commands include:
+% \ttfamily for teletype,
+% \sffamily for sans serif,
+% \bfseries for bold,
+% \scshape for small caps,
+% \normalsize, \large, \Large, \LARGE sizes.
+
+% Don't indent paragraphs.
+\setlength\parindent{0em}
+
+% Make lists without bullets
+\renewenvironment{itemize}{
+  \begin{list}{}{
+    \setlength{\leftmargin}{1.5em}
+  }
+}{
+  \end{list}
+}
+
+% Make lists with bullets
+\newenvironment{listed}{
+  \begin{list}{$\cdot$}{
+    \setlength{\leftmargin}{1.5em}
+  }
+}{
+  \end{list}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lr}
+      \textbf{#1} & #2 \\
+      \textit{\normalsize #3} & \textit{\normalsize #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% Add publications ref
+\usepackage{hanging}
+\newcommand\publication[1]{%
+  \smallskip\par\hangpara{1.5em}{1}\bibentry{#1}\smallskip
+}
+
+\begin{document}
+
+% Place name at left
+{\huge \name}
+
+% Alternatively, print name centered and bold:
+%\centerline{\huge \bf \name}
+
+\vspace{0.25in}
+
+\begin{minipage}{0.55\linewidth}
+  {Institute for Interdisciplinary Information Sciences, \\
+    Tsinghua University, P.R. China}
+\end{minipage}
+\begin{minipage}{0.45\linewidth}
+  \begin{tabular}{ll}
+    Phone: & +8613263337088 \\
+    Email: & \href{mailto:zhucz16@mails.tsinghua.edu.cn}{\tt zhucz16@mails.tsinghua.edu.cn}, \\
+           & \href{mailto:mrbrtpt@gmail.com}{\tt mrbrtpt@gmail.com} \\
+  \end{tabular}
+\end{minipage}
+
+
+\section*{Education}
+
+\begin{itemize}
+    \resumeSubheading{Tsinghua University}{Beijing, China}{B.S. in Institute for Interdisciplinary Information Sciences}{2016-present}\\
+    \begin{listed}
+	    \item Overal GPA: \textbf{3.83/4.00}; Ranking: 6/38
+        \item Selected awards: Yao Award; Freshman Scholarship
+        \item Selected to Tsinghua Xuetang Special Pilot CS Class, directed by Prof. Andrew Yao.
+        \item Admission given by \emph{Gold Medal} in the National Olympiad of Informatics 2015.
+        \item Visiting student to Carnegie Mellon University
+    \end{listed}
+\end{itemize}
+
+\section*{Research Experience}
+\begin{itemize}
+    \resumeSubheading{Carnegie Mellon University}{Pittsburgh, Pennsylvania}
+    {Research Assistant with Professor Vipul Goyal}{Feb. 2019 – present}
+    \resumeItemListStart
+    \resumeItem{Efficient Multiparty Computation Protocol with Guaranteed Output Delivery}{
+    \begin{listed}
+        \item Explored past results on the communication complexity of MPC protocol with guaranteed output delivery.
+   	    \item Proposed some ideas in reducing the communication required per multiplication gate.
+        \item Proposed a dynamic segment division protocol that improves the communication complexity under best case (when every party acts honestly).
+        \item Reduced the number of broadcasts required when localizing a malicious party.
+    \end{listed}}
+    \resumeItem{Private Storage and Computation on Blockchain}{
+    \begin{listed}
+        \item Exploring cryptographic primitives to add privacy guarantees to Blockchain protocols.
+        \item Designed a new blockchain protocol that could not only allow the users to store their data privately but also do private computation over the private data.
+    \end{listed}}
+    \resumeItem{Non-malleable Multi-source Randomness Extractor}{
+    \begin{listed}
+        \item Designing the protocols for non-malleable multi-source randomness extractor against overlapping tampering which is stronger than independent tampering.
+	\item Showed relations between non-malleable secret sharing scheme and non-malleable extractor against similar class of tampering functions.
+    \end{listed}}
+
+    \resumeItemListEnd
+
+    \resumeSubheading{Stanford University}{Palo Alto, California}{Research Assistant with Professor Keith Winstein}{Jul. 2018 – Feb. 2019}
+
+    \resumeItemListStart
+    \resumeItem{Continual Learning Improves Internet Video Streaming}{
+    \begin{listed}
+        \item Designed and implemented a continual learning algorithm for bitrate selection in streaming video which combines deep learning algorithm with model predictive control.
+        \item Built a video-streaming website for gathering real-world data and testing performance of different algorithms.
+        \item Proposed a new transmission time prediction model that could make more accurate prediction than previous model.
+    \end{listed}}
+    \resumeItemListEnd
+
+\end{itemize}
+
+\nobibliography{publication}
+\bibliographystyle{alpha}
+
+\section*{Submitted/Manuscripts}
+\begin{enumerate}
+  \item \bibentry{communcation}
+  \item \bibentry{yan2019continual}
+\end{enumerate}
+
+\section*{Honors \& Rewards}
+\begin{itemize}
+    \resumeSubheading{}{}{Yao Award (recognition price), Tsinghua University}{2019}
+    \resumeSubheading{}{}{Academic Excellence Award, Tsinghua University}{2017,2018}
+    \resumeSubheading{}{}{Fellowship of Xuetang Talents Program, Tsinghua University}{2017,2018}
+    \resumeSubheading{}{}{Freshman Scholarship, Tsinghua University}{2016}
+    \resumeSubheading{}{}{\textbf{Gold medal} in National Olympiad in Informatics (China)}{2015}
+\end{itemize}
+
+\section*{Additional Information}
+\resumeItemListStart
+    \resumeItem{Computer \& Language Skills}{
+    \begin{listed}
+        \item Programming Languages: C/C++, Java, Python, JavaScript, HTML, PHP
+        \item Libraries \& Software: Django, InfluxDB, libscapi, Latex, Matlab
+        \item Language: Chinese, English
+    \end{listed}}
+    \resumeItem{Hobbies \& Interests}{
+    \begin{listed}
+        \item Member of the institue's basketball and baseball teams.
+        \item Rubic’s Cube: solve 3 by 3 within 20 seconds.
+        \item Others: kating, Swimming, Billiards, Harmonic
+    \end{listed}}
+\resumeItemListEnd
+
+\bigskip
+
+
+\end{document}
